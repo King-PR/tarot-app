@@ -6,10 +6,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    background: linear-gradient(135deg, #0e258b 0%, #95690c 100%);
+    background-attachment: fixed;
+    height: 100vh;
     color: #fff;
-    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
 }
 
@@ -45,26 +46,28 @@ body::before {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 8px 20px 15px;
     position: relative;
     z-index: 1;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     animation: fadeInDown 1s ease-in;
+    flex-shrink: 0;
 }
 
 header h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     letter-spacing: 2px;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.95;
     font-weight: 300;
     letter-spacing: 1px;
@@ -72,29 +75,19 @@ header h1 {
 
 #canvas-container {
     width: 100%;
-    max-width: 600px;
-    height: 500px;
-    margin: 20px auto;
+    max-width: 1000px;
+    height: 10vh;
+    min-height: 650px;
+    max-height: 650px;
+    margin: -100px;
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 #canvas-container:hover {
     transform: scale(1.02);
-}
-
-/* Indicador de click */
-#canvas-container::after {
-    content: '👆 Click aquí';
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9rem;
-    opacity: 0.7;
-    animation: bounce 2s ease-in-out infinite;
-    pointer-events: none;
 }
 
 #canvas-container.clicked::after {
@@ -103,7 +96,7 @@ header h1 {
 
 @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+    50% { transform: translateX(-50%) translateY(-5px); }
 }
 
 #card-info {
@@ -111,15 +104,17 @@ header h1 {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 35px;
-    max-width: 550px;
-    margin: 20px auto;
+    padding: 25px 35px;
+    max-width: 700px;
+    width: 90%;
+    margin: 15px auto 0;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
     transform: translateY(20px);
     opacity: 0;
+    flex-shrink: 0;
 }
 
 #card-info:not(.hidden) {
@@ -145,7 +140,7 @@ header h1 {
 
 #card-title {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ffd700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: glow 2s ease-in-out infinite;
@@ -157,9 +152,9 @@ header h1 {
 }
 
 #card-message {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -168,7 +163,7 @@ header h1 {
     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
     color: #333;
     border: none;
-    padding: 14px 35px;
+    padding: 13px 32px;
     font-size: 1.05rem;
     font-weight: bold;
     border-radius: 30px;
@@ -191,11 +186,12 @@ header h1 {
 
 footer {
     margin-top: auto;
-    padding: 20px;
+    padding: 10px 20px;
     text-align: center;
     opacity: 0.85;
-    font-size: 1rem;
+    font-size: 0.95rem;
     animation: fadeIn 2s ease-in;
+    flex-shrink: 0;
 }
 
 @keyframes fadeInDown {
@@ -220,6 +216,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    header {
+        margin-bottom: 8px;
+    }
+    
     header h1 {
         font-size: 2.2rem;
     }
@@ -229,44 +229,110 @@ footer {
     }
     
     #canvas-container {
-        height: 400px;
-        max-width: 90%;
+        height: 70vh;
+        min-height: 550px;
+        max-width: 95%;
     }
     
     #card-info {
-        padding: 25px;
-        margin: 15px;
+        padding: 22px 28px;
+        margin: 12px auto 0;
     }
     
     #card-title {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
     
     #card-message {
         font-size: 1rem;
+        line-height: 1.6;
     }
     
     #reset-btn {
-        padding: 12px 28px;
+        padding: 11px 28px;
         font-size: 0.95rem;
+    }
+    
+    footer {
+        font-size: 0.9rem;
+        padding: 8px 20px;
     }
 }
 
 @media (max-width: 480px) {
+    #app {
+        padding: 5px 15px 12px;
+    }
+    
+    header {
+        margin-bottom: 5px;
+    }
+    
     header h1 {
         font-size: 1.8rem;
+        margin-bottom: 3px;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
     }
     
     #canvas-container {
-        height: 350px;
+        height: 65vh;
+        min-height: 450px;
+    }
+    
+    #canvas-container::after {
+        font-size: 0.9rem;
+        padding: 6px 16px;
     }
     
     #card-info {
-        padding: 20px;
+        padding: 20px 25px;
     }
     
     #card-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    #card-message {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+    }
+    
+    #reset-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-height: 750px) {
+    header {
+        margin-bottom: 5px;
+    }
+    
+    header h1 {
+        font-size: 2.4rem;
+    }
+    
+    #canvas-container {
+        min-height: 550px;
+        max-height: 700px;
+    }
+    
+    #card-info {
+        padding: 20px 30px;
+    }
+    
+    #card-title {
+        font-size: 1.9rem;
+        margin-bottom: 12px;
+    }
+    
+    #card-message {
+        font-size: 1rem;
+        margin-bottom: 18px;
     }
 }
 

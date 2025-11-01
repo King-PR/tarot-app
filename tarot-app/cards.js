@@ -5,84 +5,96 @@ export const tarotCards = [
         name: "El Sol",
         emoji: "☀️",
         message: "Hoy es un día lleno de energía y optimismo. Las cosas que emprendas tendrán un brillo especial. Confía en tu luz interior y compártela con los demás.",
-        color: "#FFD700"
+        color: "#FFD700",
+        image: "/assets/t1.jpg"
     },
     {
         id: 2,
         name: "La Luna",
         emoji: "🌙",
         message: "Escucha tu intuición hoy. Tus sueños y emociones tienen mensajes importantes. Es un buen día para la reflexión y conectar con tu mundo interior.",
-        color: "#E0E0E0"
+        color: "#E0E0E0",
+        image: "/assets/t2.jpg"
     },
     {
         id: 3,
         name: "La Estrella",
         emoji: "⭐",
         message: "La esperanza y la inspiración te acompañan. Es momento de soñar en grande y creer en tus posibilidades. El universo conspira a tu favor.",
-        color: "#87CEEB"
+        color: "#87CEEB",
+        image: "/assets/t3.jpg"
     },
     {
         id: 4,
         name: "El Mago",
-        emoji: "🎩",
+        emoji: "🔮",
         message: "Tienes todas las herramientas que necesitas para lograr tus objetivos. Tu creatividad y habilidades están en su punto máximo. ¡Es hora de actuar!",
-        color: "#9370DB"
+        color: "#9370DB",
+        image: "/assets/t4.jpg"
     },
     {
         id: 5,
         name: "La Fuerza",
-        emoji: "🦁",
+        emoji: "⚔️",
         message: "Tu coraje y determinación te llevarán lejos hoy. Enfrenta los desafíos con valentía, pero también con compasión. La verdadera fuerza viene del corazón.",
-        color: "#FF6347"
+        color: "#FF6347",
+        image: "/assets/t5.jpg"
     },
     {
         id: 6,
         name: "La Justicia",
         emoji: "⚖️",
         message: "Busca el equilibrio en todas tus acciones. Las decisiones que tomes hoy deben ser justas y equilibradas. La verdad y la honestidad son tus aliados.",
-        color: "#4169E1"
+        color: "#4169E1",
+        image: "/assets/t6.jpg"
     },
     {
         id: 7,
         name: "El Mundo",
         emoji: "🌍",
         message: "Estás completando un ciclo importante. Celebra tus logros y prepárate para nuevos comienzos. El mundo está lleno de posibilidades para ti.",
-        color: "#32CD32"
+        color: "#32CD32",
+        image: "/assets/t7.jpg"
     },
     {
         id: 8,
         name: "El Carro",
-        emoji: "🏆",
+        emoji: "🏇",
         message: "Tu determinación te llevará al éxito. Mantén el control y avanza con confianza. Los obstáculos son solo pruebas de tu fortaleza.",
-        color: "#FFD700"
+        color: "#FFD700",
+        image: "/assets/t8.jpg"
     },
     {
         id: 9,
         name: "El Ermitaño",
         emoji: "🕯️",
         message: "Hoy necesitas tiempo para ti mismo. La soledad consciente trae sabiduría. Busca respuestas dentro de ti antes de buscarlas afuera.",
-        color: "#A9A9A9"
+        color: "#A9A9A9",
+        image: "/assets/t9.jpg"
     },
     {
         id: 10,
         name: "La Rueda",
         emoji: "🎡",
         message: "Los cambios son inevitables y necesarios. Acepta los giros del destino con gracia. Lo que sube debe bajar, y viceversa. Todo es cíclico.",
-        color: "#FF69B4"
+        color: "#FF69B4",
+        image: "/assets/t10.jpg"
     },
     {
         id: 11,
         name: "Los Enamorados",
         emoji: "💕",
         message: "Las relaciones y conexiones son importantes hoy. Toma decisiones desde el amor, no desde el miedo. La armonía en tus vínculos es clave.",
-        color: "#FF1493"
+        color: "#FF1493",
+        image: "/assets/t11.jpg"
     },
     {
         id: 12,
         name: "El Emperador",
         emoji: "👑",
         message: "Estructura y liderazgo son tus fortalezas hoy. Organiza tus ideas y toma el control de tu día. Tu autoridad interior te guía.",
-        color: "#B8860B"
+        color: "#B8860B",
+        image: "/assets/t12.jpg"
     }
 ];
 
