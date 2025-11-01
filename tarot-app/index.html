@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Matutino | Tu carta del día</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Tarot Matutino</h1>
+            <p class="subtitle">Descubre tu mensaje para comenzar el día</p>
+        </header>
+        
+        <div id="canvas-container"></div>
+        
+        <div id="card-info" class="hidden">
+            <h2 id="card-title"></h2>
+            <p id="card-message"></p>
+            <button id="reset-btn">Nueva Carta</button>
+        </div>
+        
+        <footer>
+            <p>Haz click en la carta para revelar tu mensaje</p>
+        </footer>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

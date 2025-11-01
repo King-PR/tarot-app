@@ -1,0 +1,22 @@
+{
+  "name": "tarot-app",
+  "version": "1.0.0",
+  "description": "Aplicación de Tarot Matutino con Three.js",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "tarot",
+    "threejs",
+    "webgl"
+  ],
+  "author": "Pablo Reyes Pomés",
+  "license": "MIT",
+  "devDependencies": {
+    "three": "^0.160.1",
+    "vite": "^7.1.12"
+  }
+}
