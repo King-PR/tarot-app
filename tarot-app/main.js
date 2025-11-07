@@ -284,10 +284,16 @@ function flipCard() {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
         
-        const eased = progress < 0.5
-            ? 4 * progress * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-        
+        let eased;
+
+        if (progress < 0.5) {
+        // Primera mitad: ease-in (acelera suavemente)
+        eased = 4 * progress * progress * progress;
+        } else {
+        // Segunda mitad: ease-out (desacelera suavemente)
+        eased = 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        }
+
         cardGroup.rotation.y = startRotation + totalRotation * eased;
         
         const scale = 1 + Math.sin(progress * Math.PI) * 0.15;
@@ -363,10 +369,16 @@ function resetCard() {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
         
-        const eased = progress < 0.5
-            ? 4 * progress * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-        
+        let eased;
+
+        if (progress < 0.5) {
+        // Primera mitad: ease-in (acelera suavemente)
+        eased = 4 * progress * progress * progress;
+        } else {
+        // Segunda mitad: ease-out (desacelera suavemente)
+        eased = 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        }
+
         cardGroup.rotation.y = startRotation + totalRotation * eased;
         
         const scale = 1 + Math.sin(progress * Math.PI) * 0.15;
@@ -394,8 +406,8 @@ function animate() {
     requestAnimationFrame(animate);
     
     if (!isAnimating && !isFlipped && autoRotate) {
-        cardGroup.rotation.y += 0.003;
-        cardGroup.position.y = Math.sin(Date.now() * 0.001) * 0.1;
+        cardGroup.rotation.y += 0.003; // 0.003 radianes por segundo
+        cardGroup.position.y = Math.sin(Date.now() * 0.001) * 0.1; // Date.now en ms ÷ 1000 para s. Sin produce valores entre -1 y 1, todo x0.1 para amplitud
     }
     
     if (isFlipped) {
